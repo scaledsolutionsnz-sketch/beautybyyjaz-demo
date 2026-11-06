@@ -23,13 +23,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Jost:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/jost-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Real ō for Taupō: listed before Jost so Chrome doesn't build it from o plus a loose macron */
+@font-face{font-family:'Jost Ext';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/jost-latin-ext.woff2) format('woff2');unicode-range:U+0100-017F}
 :root{
   --bg:#0F0B09;--bg-deep:#0A0706;--surface:#1A1411;--surface-2:#251B16;--cocoa:#3B2A21;
   --line:#3A2C24;--hair:rgba(200,162,124,.16);
   --text:#F5EDE4;--muted:#BFAE9E;--accent:#C8A27C;--accent-hi:#DCC09E;--on-accent:#16100C;--cognac:#8C5E3C;
   --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --sans:'Jost Ext','Jost',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --radius:20px;--radius-sm:14px;--header:64px;--chips:60px;
   --ease:cubic-bezier(.2,.75,.2,1);
   color-scheme:dark;
@@ -130,7 +133,7 @@ ul{margin:0;padding:0;list-style:none}
 .start{display:flex;flex-direction:column;gap:4px;padding:18px 18px 16px;border:1px solid var(--line);border-radius:var(--radius-sm);background:linear-gradient(180deg,var(--surface),rgba(26,20,17,.55));transition:border-color .2s,transform .2s var(--ease)}
 .start:hover{border-color:rgba(200,162,124,.55);transform:translateY(-2px)}
 .start .k{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.start .v{font-family:var(--serif);font-size:1.95rem;font-weight:600;color:var(--accent);line-height:1.05;font-variant-numeric:lining-nums}
+.start .v{margin-top:auto;font-family:var(--serif);font-size:1.95rem;font-weight:600;color:var(--accent);line-height:1.05;font-variant-numeric:lining-nums}
 @media (min-width:760px){.starts-grid{grid-template-columns:repeat(4,1fr);gap:16px}.start{padding:22px 22px 18px}}
 
 /* sections */
@@ -153,7 +156,7 @@ section[id]{scroll-margin-top:var(--header)}
 .chips-row::after{content:"";flex:0 0 8px}
 .chip{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;color:var(--muted);white-space:nowrap;transition:background-color .2s,border-color .2s,color .2s}
 .chip:hover{color:var(--text);border-color:rgba(200,162,124,.55)}
-.chip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+@media (max-width:979.98px){.chip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}}
 .cats{columns:1;column-gap:24px}
 .cat{display:inline-block;width:100%;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;margin:0 0 20px;padding:22px 20px 14px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--surface) 0%,#15100D 100%);scroll-margin-top:calc(var(--header) + var(--chips) + 14px)}
 .cat-head{display:flex;gap:14px;align-items:center}
@@ -176,7 +179,8 @@ section[id]{scroll-margin-top:var(--header)}
 .cat-book{display:inline-flex;align-items:center;gap:8px;min-height:48px;margin-top:4px;color:var(--accent);font-weight:500;font-size:.96rem}
 .cat-book svg{width:16px;height:16px;flex:none}
 .cat-book:hover{color:var(--accent-hi)}
-@media (min-width:980px){.cats{columns:2}.cat{padding:28px 28px 16px;margin-bottom:24px;scroll-margin-top:calc(var(--header) + 20px)}.chips{position:static;background:transparent;border:0;margin:30px 0 30px;-webkit-backdrop-filter:none;backdrop-filter:none}.chips-row{flex-wrap:wrap;overflow:visible;padding-top:0;padding-bottom:0}.chips-row::after{display:none}}
+@media (min-width:980px){.cats{columns:2}.cat{padding:28px 28px 16px;margin-bottom:24px;scroll-margin-top:calc(var(--header) + 20px)}.chips{position:static;background:transparent;border:0;margin:30px 0 30px;-webkit-backdrop-filter:none;backdrop-filter:none}.chips-row{flex-wrap:wrap;gap:6px;overflow:visible;padding-top:0;padding-bottom:0}.chips-row::after{display:none}.chip{padding:0 12px;font-size:.9rem}}
+@media (min-width:980px) and (max-width:1159.98px){.chips-row{display:grid;grid-template-columns:repeat(4,auto);justify-content:start}.chip{justify-content:center}}
 
 /* work */
 .work{background:var(--surface)}
@@ -224,9 +228,10 @@ section[id]{scroll-margin-top:var(--header)}
 .faq-grid{display:grid;gap:14px}
 .qa{padding:20px 20px 18px;border:1px solid var(--line);border-radius:var(--radius-sm);background:rgba(15,11,9,.42)}
 .qa h3{font-size:1.42rem;line-height:1.18;margin-bottom:8px}
-.qa p{color:var(--muted);font-size:.97rem;line-height:1.6}
+.qa p{color:var(--muted);font-size:.97rem;line-height:1.6;max-width:70ch}
 .qa a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .qa a:hover{color:var(--accent-hi)}
+.qa a[href^="tel:"]{white-space:nowrap}
 @media (min-width:900px){.faq-grid{grid-template-columns:1fr 1fr;gap:18px 22px}.qa{padding:26px 28px 24px}.qa:last-child:nth-child(odd){grid-column:1 / -1}}
 
 /* visit */
@@ -310,7 +315,7 @@ section[id]{scroll-margin-top:var(--header)}
         <a class="btn btn-accent" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener">Book on Fresha<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         <a class="btn btn-ghost" href="#menu">View the menu</a>
       </div>
-      <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>5.0 from 98 reviews on Fresha</span></a>
+      <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Rated 5.0 on Fresha</span></a>
     </div>
     <figure class="hero-photo">
       <div class="arch"><img src="img/client-brows-04-720.webp" srcset="img/client-brows-04-720.webp 720w, img/client-brows-04.webp 1351w" sizes="(min-width: 900px) 440px, 84vw" width="1351" height="1800" alt="Client with freshly laminated brows after an appointment with Jaz" fetchpriority="high" decoding="async"></div>
@@ -393,9 +398,9 @@ section[id]{scroll-margin-top:var(--header)}
             </div>
           </header>
           <p class="cat-note">Lifts and lamination typically last 6 to 8 weeks. Arrive with clean lashes and brows, free from makeup, oils and skincare.</p>
-          <figure class="cat-photo"><img src="img/client-brows-02-720.webp" srcset="img/client-brows-02-720.webp 720w, img/client-brows-02.webp 1350w" sizes="(min-width: 980px) 520px, 92vw" width="1350" height="1800" alt="Client with freshly laminated, brushed-up brows after a brow lamination with Jaz" loading="lazy" decoding="async"><figcaption>Brow Lamination by Jaz</figcaption></figure>
+          <figure class="cat-photo"><img src="img/client-brows-02-720.webp" srcset="img/client-brows-02-720.webp 720w, img/client-brows-02.webp 1350w" sizes="(min-width: 980px) 520px, 92vw" width="1350" height="1800" alt="Client with freshly laminated, brushed-up brows after a brow lamination with Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination by Jaz</figcaption></figure>
           <ul class="svc-list">
-            <li class="svc"><div class="svc-main"><span class="svc-name">Yumi Keratin Lash Lift And Tint</span><span class="svc-desc">Lifts, curls and defines your own lashes from the root, with no extensions.</span></div><div class="svc-meta"><span class="svc-price">$130</span><span class="svc-time">1 hr</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">Brow Lamination</span><span class="svc-desc">Smooths and sets your brow hairs for fuller, fluffier, more defined brows.</span></div><div class="svc-meta"><span class="svc-price">$100</span><span class="svc-time">45 min</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">The Ultimate Lift Bundle</span><span class="svc-desc">Lash lift and tint, brow lamination, brow shape and wax, plus a brow tint if you’d like one.</span></div><div class="svc-meta"><span class="svc-price">$200</span><span class="svc-time">1 hr 45 min</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">Lash Consultation</span></div><div class="svc-meta"><span class="svc-price">Free</span><span class="svc-time">30 min</span></div></li>
+            <li class="svc"><div class="svc-main"><span class="svc-name">Brow Lamination</span><span class="svc-desc">Smooths and sets your brow hairs for fuller, fluffier, more defined brows.</span></div><div class="svc-meta"><span class="svc-price">$100</span><span class="svc-time">45 min</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">The Ultimate Lift Bundle</span><span class="svc-desc">Lash lift and tint, brow lamination, brow shape and wax, plus a brow tint if you’d like one.</span></div><div class="svc-meta"><span class="svc-price">$200</span><span class="svc-time">1 hr 45 min</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">Yumi Keratin Lash Lift And Tint</span><span class="svc-desc">Lifts, curls and defines your own lashes from the root, with no extensions.</span></div><div class="svc-meta"><span class="svc-price">$130</span><span class="svc-time">1 hr</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">Lash Consultation</span></div><div class="svc-meta"><span class="svc-price">Free</span><span class="svc-time">30 min</span></div></li>
           </ul>
           <a class="cat-book" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener" aria-label="Book Lash And Brow Enhancements on Fresha">Book on Fresha<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </article>
@@ -483,8 +488,8 @@ section[id]{scroll-margin-top:var(--header)}
     <div class="work-head">
       <div class="sec-head">
         <p class="eyebrow">Her work</p>
-        <h2 id="work-title">Recent <em>brow lamination</em></h2>
-        <p>A few recent brow lamination results from Jaz. There&#8217;s more on her Instagram.</p>
+        <h2 id="work-title">Brow <em>lamination</em> by Jaz</h2>
+        <p>A few brow lamination results from Jaz. There&#8217;s more on her Instagram.</p>
       </div>
       <a class="btn btn-ghost" href="https://www.instagram.com/beautybyyjaz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>@beautybyyjaz</a>
     </div>
@@ -506,7 +511,7 @@ section[id]{scroll-margin-top:var(--header)}
       <p>Her clients&#8217; reviews keep coming back to the same things: she&#8217;s friendly and easy to talk to, they feel comfortable, and they love the results.</p>
       <ul class="facts">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.4 7 21l5-2.6 5 2.6-1.6-7.6"/></svg><span>Senior Brow &amp; Lash Technician</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.2 2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3.1-5.4 3.1 1.2-6-4.5-4.2 6.1-.7z"/></svg><span>5.0 from 98 reviews on Fresha</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.2 2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3.1-5.4 3.1 1.2-6-4.5-4.2 6.1-.7z"/></svg><span>Rated 5.0 on Fresha</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><span>Free 30 minute lash consultation</span></li>
       </ul>
     </div>
@@ -585,12 +590,12 @@ section[id]{scroll-margin-top:var(--header)}
     <div class="visit-card">
       <p class="eyebrow">Visit</p>
       <h2 id="visit-title">Find <em>Jaz</em></h2>
-      <p>By appointment. Book online on Fresha or give Jaz a call.</p>
+      <p>Book online on Fresha or give Jaz a call.</p>
       <div class="info">
         <a class="row" href="https://www.google.com/maps/dir/?api=1&amp;destination=Beautybyyjaz%2C%2031%20Te%20Heuheu%20Street%2C%20Taup%C5%8D%203330&amp;destination_place_id=ChIJvW29un_xa20R_sNXnCnbPzs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span><small>Address</small><span class="val">31 Te Heuheu Street, Taup&#333; 3330</span></span></a>
         <a class="row" href="tel:+64272491312"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.2a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg><span><small>Phone</small><span class="val">027 249 1312</span></span></a>
         <a class="row" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=beautybyyjaz%40gmail.com&amp;su=Booking%20enquiry" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span><small>Email</small><span class="val">beautybyyjaz&#64;gmail.com</span></span></a>
-        <a class="row" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Hours</small><span class="val">By appointment. See live availability on Fresha.</span></span></a>
+        <a class="row" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Hours</small><span class="val">See live availability on Fresha.</span></span></a>
       </div>
       <div class="visit-actions" data-hide-bar>
         <a class="btn btn-accent" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener">Book on Fresha<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>

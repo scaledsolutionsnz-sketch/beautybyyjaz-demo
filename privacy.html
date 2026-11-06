@@ -13,13 +13,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Jost:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/jost-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Real ō for Taupō: listed before Jost so Chrome doesn't build it from o plus a loose macron */
+@font-face{font-family:'Jost Ext';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/jost-latin-ext.woff2) format('woff2');unicode-range:U+0100-017F}
 :root{
   --bg:#0F0B09;--bg-deep:#0A0706;--surface:#1A1411;--surface-2:#251B16;--cocoa:#3B2A21;
   --line:#3A2C24;--hair:rgba(200,162,124,.16);
   --text:#F5EDE4;--muted:#BFAE9E;--accent:#C8A27C;--accent-hi:#DCC09E;--on-accent:#16100C;--cognac:#8C5E3C;
   --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --sans:'Jost Ext','Jost',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --radius:20px;--radius-sm:14px;--header:64px;--chips:60px;
   --ease:cubic-bezier(.2,.75,.2,1);
   color-scheme:dark;
@@ -79,6 +82,7 @@ main{padding:calc(var(--header) + 56px) 0 80px;background:radial-gradient(90% 40
 .legal li{margin-bottom:6px}
 .legal a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .legal a:hover{color:var(--accent-hi)}
+.legal a[href^="tel:"]{white-space:nowrap}
 @media (min-width:900px){:root{--header:72px}.nav{height:72px}.brand img{width:46px;height:46px}.brand span{font-size:1.65rem}}
 </style>
 </head>
@@ -107,7 +111,7 @@ main{padding:calc(var(--header) + 56px) 0 80px;background:radial-gradient(90% 40
     <p>Under the Privacy Act 2020 you can ask to see or correct the personal information Beauty byy Jaz holds about you.</p>
 
     <h2>Contact</h2>
-    <p>Privacy questions can be sent to <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=beautybyyjaz%40gmail.com&amp;su=Booking%20enquiry" target="_blank" rel="noopener">beautybyyjaz&#64;gmail.com</a> or raised on <a href="tel:+64272491312">027 249 1312</a>.</p>
+    <p>Privacy questions can be sent to <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=beautybyyjaz%40gmail.com&amp;su=Privacy%20question" target="_blank" rel="noopener">beautybyyjaz&#64;gmail.com</a> or raised on <a href="tel:+64272491312">027 249 1312</a>.</p>
   </div>
 </main>
 <footer class="site-footer">
