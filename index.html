@@ -8,6 +8,7 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0F0B09">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_NZ">
 <meta property="og:site_name" content="Beauty byy Jaz">
 <meta property="og:title" content="Beauty byy Jaz | Lashes and Brows in Taupō">
 <meta property="og:description" content="Lash extensions, infills, lifts, brow lamination, brows, facial waxing and tooth gems with Jaz at 31 Te Heuheu Street, Taupō. Book on Fresha.">
@@ -17,6 +18,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Beauty byy Jaz logo on a black and brown background">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beauty byy Jaz | Lashes and Brows in Taupō">
+<meta name="twitter:description" content="Lash extensions, infills, lifts, brow lamination, brows, facial waxing and tooth gems with Jaz at 31 Te Heuheu Street, Taupō. Book on Fresha.">
+<meta name="twitter:image" content="https://beautybyyjaz-demo.vercel.app/img/og-card.jpg">
+<meta name="twitter:image:alt" content="Beauty byy Jaz logo on a black and brown background">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon-96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -110,6 +115,7 @@ ul{margin:0;padding:0;list-style:none}
   background:radial-gradient(120% 70% at 90% 0%,rgba(140,94,60,.40) 0%,rgba(140,94,60,0) 62%),radial-gradient(90% 55% at 0% 100%,rgba(59,42,33,.75) 0%,rgba(59,42,33,0) 70%),var(--bg)}
 .hero-grid{display:grid;gap:44px;align-items:center}
 .hero h1{font-size:clamp(2.9rem,12vw,5.4rem);line-height:.98;margin-bottom:20px;letter-spacing:-.005em}
+.hero h1 .eyebrow{display:flex;width:fit-content;margin-top:9.2px;font-family:var(--sans);font-weight:500;line-height:1.65}
 .lead{font-size:1.12rem;color:var(--muted);max-width:40ch;margin-bottom:28px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
 @media (max-width:480px){.cta-row .btn{flex:1 1 auto;padding:0 18px}}
@@ -245,6 +251,9 @@ section[id]{scroll-margin-top:var(--header)}
 .info svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:4px}
 .info small{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .info a.row:hover .val{color:var(--accent-hi)}
+.info .go{display:flex;align-items:center;gap:6px;width:fit-content;margin-top:4px;color:var(--accent);font-size:.92rem;font-weight:500}
+.info .go svg{width:15px;height:15px;margin-top:0;color:currentColor}
+.info a.row:hover .go{color:var(--accent-hi)}
 .visit-actions{display:grid;gap:10px}
 .socials{display:flex;gap:10px;margin-top:22px}
 .socials a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(245,237,228,.24);transition:border-color .2s,color .2s}
@@ -308,9 +317,8 @@ section[id]{scroll-margin-top:var(--header)}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Lashes &middot; Brows &middot; Taup&#333;</p>
-      <h1 id="hero-title">Your one stop <em>beauty spot</em>.</h1>
-      <p class="lead">Lash extensions, lifts, brows, facial waxing and tooth gems with Jaz at 31 Te Heuheu Street, Taup&#333;.</p>
+      <h1 id="hero-title"><span class="eyebrow">Lashes &middot; Brows &middot; Taup&#333;</span> Your one stop <em>beauty spot</em>.</h1>
+      <p class="lead">Lash extensions, lifts, brows, facial waxing and tooth gems with Jaz, a Senior Brow &amp; Lash Technician at 31&nbsp;Te&nbsp;Heuheu&nbsp;Street,&nbsp;Taup&#333;.</p>
       <div class="cta-row" data-hide-bar>
         <a class="btn btn-accent" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener">Book on Fresha<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         <a class="btn btn-ghost" href="#menu">View the menu</a>
@@ -318,7 +326,7 @@ section[id]{scroll-margin-top:var(--header)}
       <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Rated 5.0 on Fresha</span></a>
     </div>
     <figure class="hero-photo">
-      <div class="arch"><img src="img/client-brows-04-720.webp" srcset="img/client-brows-04-720.webp 720w, img/client-brows-04.webp 1351w" sizes="(min-width: 900px) 440px, 84vw" width="1351" height="1800" alt="Client with freshly laminated brows after an appointment with Jaz" fetchpriority="high" decoding="async"></div>
+      <div class="arch"><img src="img/client-brows-04-720.webp" srcset="img/client-brows-04-720.webp 720w, img/client-brows-04.webp 1351w" sizes="(min-width: 900px) 440px, 84vw" width="1351" height="1800" alt="Client with freshly laminated brows after an appointment with Jaz in Taup&#333;" fetchpriority="high" decoding="async"></div>
       <figcaption>Brow lamination by Jaz</figcaption>
     </figure>
   </div>
@@ -338,7 +346,7 @@ section[id]{scroll-margin-top:var(--header)}
     <div class="sec-head">
       <p class="eyebrow">The menu</p>
       <h2 id="menu-title">Services <em>and prices</em></h2>
-      <p>Every service, time and price from Jaz&#8217;s Fresha menu. Prices are in NZ dollars.</p>
+      <p>Every service, time and price from Jaz&#8217;s Fresha menu for lashes, brows, facial waxing and tooth gems in Taup&#333;. Prices are in NZ dollars.</p>
     </div>
     <div class="book-note">
       <p><strong>Bookings are made on Fresha.</strong> Jaz&#8217;s services are listed on the Fresha page for Cosmetics and Aesthetics at 31 Te Heuheu Street. Pick your service, then select Jaz as your professional.</p>
@@ -523,7 +531,7 @@ section[id]{scroll-margin-top:var(--header)}
     <div class="sec-head">
       <p class="eyebrow">Reviews</p>
       <h2 id="reviews-title">Kind words from <em>clients</em></h2>
-      <p class="rev-summary"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>5.0 from 98 reviews on Fresha</span></p>
+      <p class="rev-summary"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>5.0 from 99 reviews on Fresha</span></p>
     </div>
     <div class="rev-grid">
         <figure class="review">
@@ -572,6 +580,8 @@ section[id]{scroll-margin-top:var(--header)}
       <p>Quick answers about lashes, brows, waxing and tooth gems with Jaz in Taup&#333;.</p>
     </div>
     <div class="faq-grid">
+        <div class="qa"><h3>Who is Jaz?</h3><p>Jaz is the beauty therapist behind Beauty byy Jaz in Taup&#333;, listed on Fresha as a Senior Brow &amp; Lash Technician. She does lash extensions, infills and lifts, brow lamination, brow shaping and tinting, facial waxing and tooth gems, and she&#8217;s rated 5.0 on Fresha. See her work on Instagram at <a href="https://www.instagram.com/beautybyyjaz/" target="_blank" rel="noopener">@beautybyyjaz</a>.</p></div>
+        <div class="qa"><h3>Where is Beauty byy Jaz?</h3><p>At <a href="https://www.google.com/maps?cid=4269371943533659134" target="_blank" rel="noopener">31 Te Heuheu Street, Taup&#333; 3330</a>, the same address as Cosmetics and Aesthetics, where her services are listed on Fresha. She&#8217;s on Google Maps as Beautybyyjaz, and the <a href="#visit">map below</a> shows where to find her.</p></div>
         <div class="qa"><h3>How do I book with Jaz?</h3><p>Tap <a href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener">Book on Fresha</a>, pick your service and select Jaz as your professional. Her services are listed on the Fresha page for Cosmetics and Aesthetics at 31 Te Heuheu Street. Not sure what to book? The 30 minute Lash Consultation is free. You can also call <a href="tel:+64272491312">027 249 1312</a>.</p></div>
         <div class="qa"><h3>How long does a full set of lash extensions take?</h3><p>Allow 1 hr 30 min. Every full set, from Classics ($120) to Medium Volume Wispy ($155), is booked for 1 hr 30 min. You can add a bottom lash tint for $10.</p></div>
         <div class="qa"><h3>When should I book an infill?</h3><p>Infills are recommended every 2 to 3 weeks. Book the 1 Week Infill ($50) within 7 days, the 2 Week Infill ($80) within 14 days or the 3 Week Infill ($90) within 21 days. After 21 days you may need a full set.</p></div>
@@ -589,10 +599,10 @@ section[id]{scroll-margin-top:var(--header)}
   <div class="wrap visit-grid">
     <div class="visit-card">
       <p class="eyebrow">Visit</p>
-      <h2 id="visit-title">Find <em>Jaz</em></h2>
-      <p>Book online on Fresha or give Jaz a call.</p>
+      <h2 id="visit-title">Find <em>Jaz</em> in Taup&#333;</h2>
+      <p>Jaz is at 31 Te Heuheu Street, Taup&#333;. Book online on Fresha or give her a call.</p>
       <div class="info">
-        <a class="row" href="https://www.google.com/maps/dir/?api=1&amp;destination=Beautybyyjaz%2C%2031%20Te%20Heuheu%20Street%2C%20Taup%C5%8D%203330&amp;destination_place_id=ChIJvW29un_xa20R_sNXnCnbPzs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span><small>Address</small><span class="val">31 Te Heuheu Street, Taup&#333; 3330</span></span></a>
+        <a class="row" href="https://www.google.com/maps/dir/?api=1&amp;destination=Beautybyyjaz%2C%2031%20Te%20Heuheu%20Street%2C%20Taup%C5%8D%203330&amp;destination_place_id=ChIJvW29un_xa20R_sNXnCnbPzs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span><small>Address</small><span class="val">31 Te Heuheu Street, Taup&#333; 3330</span><span class="go">Get directions<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span></a>
         <a class="row" href="tel:+64272491312"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.2a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg><span><small>Phone</small><span class="val">027 249 1312</span></span></a>
         <a class="row" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=beautybyyjaz%40gmail.com&amp;su=Booking%20enquiry" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span><small>Email</small><span class="val">beautybyyjaz&#64;gmail.com</span></span></a>
         <a class="row" href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Hours</small><span class="val">See live availability on Fresha.</span></span></a>
@@ -632,6 +642,7 @@ section[id]{scroll-margin-top:var(--header)}
         <h3>Contact</h3>
         <a href="https://www.fresha.com/book-now/cosmetics-and-aesthetics-o3guk590/all-offer?id=2890635&amp;share=true&amp;pId=2794934" target="_blank" rel="noopener">Book on Fresha</a>
         <a href="tel:+64272491312">027 249 1312</a>
+        <a href="https://www.google.com/maps?cid=4269371943533659134" target="_blank" rel="noopener">31 Te Heuheu Street, Taup&#333;</a>
         <a href="https://www.instagram.com/beautybyyjaz/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.facebook.com/profile.php?id=61557643474463" target="_blank" rel="noopener">Facebook</a>
       </div>
@@ -661,10 +672,13 @@ section[id]{scroll-margin-top:var(--header)}
     "Beauty By Jaz",
     "Beautybyyjaz"
    ],
+   "description": "Lash extensions, infills, lash lifts, brow lamination, brows, facial waxing and tooth gems with Jaz, a Senior Brow & Lash Technician, at 31 Te Heuheu Street, Taupō. Book online on Fresha.",
+   "slogan": "Your one stop beauty spot",
    "url": "https://beautybyyjaz-demo.vercel.app/",
    "image": "https://beautybyyjaz-demo.vercel.app/img/og-card.jpg",
    "logo": "https://beautybyyjaz-demo.vercel.app/img/beauty-by-jaz-logo.webp",
    "telephone": "+64 27 249 1312",
+   "email": "beautybyyjaz@gmail.com",
    "address": {
     "@type": "PostalAddress",
     "streetAddress": "31 Te Heuheu Street",
@@ -679,15 +693,67 @@ section[id]{scroll-margin-top:var(--header)}
     "longitude": 176.0708849
    },
    "hasMap": "https://www.google.com/maps?cid=4269371943533659134",
+   "areaServed": {
+    "@type": "City",
+    "name": "Taupō"
+   },
+   "knowsAbout": [
+    "Lash extensions",
+    "Lash infills",
+    "Lash lifts",
+    "Brow lamination",
+    "Brow shaping and tinting",
+    "Facial waxing",
+    "Tooth gems"
+   ],
+   "employee": {
+    "@id": "https://beautybyyjaz-demo.vercel.app/#jaz"
+   },
    "sameAs": [
     "https://www.instagram.com/beautybyyjaz/",
-    "https://www.facebook.com/profile.php?id=61557643474463"
+    "https://www.facebook.com/profile.php?id=61557643474463",
+    "https://www.google.com/maps?cid=4269371943533659134"
    ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://beautybyyjaz-demo.vercel.app/#jaz",
+   "name": "Jaz",
+   "jobTitle": "Senior Brow & Lash Technician",
+   "worksFor": {
+    "@id": "https://beautybyyjaz-demo.vercel.app/#business"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://beautybyyjaz-demo.vercel.app/#website",
+   "name": "Beauty byy Jaz",
+   "url": "https://beautybyyjaz-demo.vercel.app/",
+   "inLanguage": "en-NZ",
+   "publisher": {
+    "@id": "https://beautybyyjaz-demo.vercel.app/#business"
+   }
   },
   {
    "@type": "FAQPage",
    "@id": "https://beautybyyjaz-demo.vercel.app/#faq",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Who is Jaz?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jaz is the beauty therapist behind Beauty byy Jaz in Taupō, listed on Fresha as a Senior Brow & Lash Technician. She does lash extensions, infills and lifts, brow lamination, brow shaping and tinting, facial waxing and tooth gems, and she’s rated 5.0 on Fresha. See her work on Instagram at @beautybyyjaz."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Where is Beauty byy Jaz?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "At 31 Te Heuheu Street, Taupō 3330, the same address as Cosmetics and Aesthetics, where her services are listed on Fresha. She’s on Google Maps as Beautybyyjaz, and the map below shows where to find her."
+     }
+    },
     {
      "@type": "Question",
      "name": "How do I book with Jaz?",
