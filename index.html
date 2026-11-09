@@ -123,15 +123,16 @@ ul{margin:0;padding:0;list-style:none}
 .rating{display:inline-flex;align-items:center;gap:12px;font-size:.98rem;color:var(--text);min-height:44px}
 .rating:hover{color:var(--accent-hi)}
 .stars{color:var(--caramel);letter-spacing:.12em;font-size:1rem;line-height:1}
-.hero-photo{position:relative;margin:0 auto;width:min(84%,440px)}
-.hero-photo::before{content:"";position:absolute;inset:-13px;border:1px solid rgba(156,107,66,.4);border-radius:999px 999px 32px 32px;pointer-events:none}
-.arch{position:relative;border-radius:999px 999px 22px 22px;overflow:hidden;aspect-ratio:4/5;background:var(--surface-2);box-shadow:0 40px 80px -40px rgba(94,64,44,.5)}
-.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
-.hero-photo figcaption{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);white-space:nowrap;background:rgba(255,253,249,.9);color:var(--text);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--hair);font-size:.86rem;padding:8px 16px;border-radius:999px}
+.hero-photo{position:relative;margin:0 auto;width:calc(100% - 26px);max-width:520px}
+.hero-photo::before{content:"";position:absolute;inset:-13px;border:1px solid rgba(156,107,66,.4);border-radius:50% 50% 32px 32px / 40% 40% 32px 32px;pointer-events:none}
+.arch{position:relative;border-radius:50% 50% 22px 22px / 38% 38% 22px 22px;overflow:hidden;aspect-ratio:1920/1501;background:var(--surface-2);box-shadow:0 40px 80px -40px rgba(94,64,44,.5)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.hero-photo figcaption{position:absolute;left:14px;bottom:12px;white-space:nowrap;background:rgba(255,253,249,.9);color:var(--text);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--hair);font-size:.86rem;padding:6px 14px;border-radius:999px}
 @media (min-width:900px){
   .hero{padding:calc(var(--header) + 76px) 0 88px}
   .hero-grid{grid-template-columns:1.12fr .88fr;gap:72px}
-  .hero-photo{width:100%;max-width:440px}
+  .hero-photo{width:100%;max-width:460px}
+  .hero-photo figcaption{left:18px;bottom:16px;padding:8px 16px}
 }
 
 /* starting prices */
@@ -327,8 +328,8 @@ section[id]{scroll-margin-top:var(--header)}
       <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Rated 5.0 on Fresha</span></a>
     </div>
     <figure class="hero-photo">
-      <div class="arch"><img src="img/client-brows-04-720.webp" srcset="img/client-brows-04-720.webp 720w, img/client-brows-04.webp 1351w" sizes="(min-width: 900px) 440px, 84vw" width="1351" height="1800" alt="Client with freshly laminated brows after an appointment with Jaz in Taup&#333;" fetchpriority="high" decoding="async"></div>
-      <figcaption>Brow lamination by Jaz</figcaption>
+      <div class="arch"><img src="img/jaz-standing-1080.webp" srcset="img/jaz-standing-1080.webp 1080w, img/jaz-standing-1920.webp 1920w" sizes="(min-width: 900px) 460px, 92vw" width="1920" height="1501" alt="Jaz from Beauty byy Jaz smiling in a black top, standing behind a white desk beside an iMac" fetchpriority="high" decoding="async"></div>
+      <figcaption>Meet Jaz</figcaption>
     </figure>
   </div>
 </section>
@@ -407,7 +408,7 @@ section[id]{scroll-margin-top:var(--header)}
             </div>
           </header>
           <p class="cat-note">Lifts and lamination typically last 6 to 8 weeks. Arrive with clean lashes and brows, free from makeup, oils and skincare.</p>
-          <figure class="cat-photo"><img src="img/client-brows-02-720.webp" srcset="img/client-brows-02-720.webp 720w, img/client-brows-02.webp 1350w" sizes="(min-width: 980px) 520px, 92vw" width="1350" height="1800" alt="Client with freshly laminated, brushed-up brows after a brow lamination with Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination by Jaz</figcaption></figure>
+          <figure class="cat-photo"><img src="img/client-brows-02-720.webp" srcset="img/client-brows-02-720.webp 720w, img/client-brows-02.webp 1440w" sizes="(min-width: 980px) 520px, 92vw" width="1440" height="1920" alt="Client with freshly laminated, brushed-up brows after a brow lamination with Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination by Jaz</figcaption></figure>
           <ul class="svc-list">
             <li class="svc"><div class="svc-main"><span class="svc-name">Brow Lamination</span><span class="svc-desc">Smooths and sets your brow hairs for fuller, fluffier, more defined brows.</span></div><div class="svc-meta"><span class="svc-price">$100</span><span class="svc-time">45 min</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">The Ultimate Lift Bundle</span><span class="svc-desc">Lash lift and tint, brow lamination, brow shape and wax, plus a brow tint if you’d like one.</span></div><div class="svc-meta"><span class="svc-price">$200</span><span class="svc-time">1 hr 45 min</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">Yumi Keratin Lash Lift And Tint</span><span class="svc-desc">Lifts, curls and defines your own lashes from the root, with no extensions.</span></div><div class="svc-meta"><span class="svc-price">$130</span><span class="svc-time">1 hr</span></div></li><li class="svc"><div class="svc-main"><span class="svc-name">Lash Consultation</span></div><div class="svc-meta"><span class="svc-price">Free</span><span class="svc-time">30 min</span></div></li>
           </ul>
@@ -503,9 +504,9 @@ section[id]{scroll-margin-top:var(--header)}
       <a class="btn btn-ghost" href="https://www.instagram.com/beautybyyjaz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>@beautybyyjaz</a>
     </div>
     <div class="work-grid">
-      <figure><img src="img/client-brows-01-720.webp" srcset="img/client-brows-01-720.webp 720w, img/client-brows-01.webp 1350w" sizes="(min-width: 900px) 360px, 92vw" width="1350" height="1800" alt="Client lying back with brushed-up, laminated brows after a brow lamination with Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination</figcaption></figure>
-      <figure><img src="img/client-brows-03-720.webp" srcset="img/client-brows-03-720.webp 720w, img/client-brows-03.webp 1350w" sizes="(min-width: 900px) 360px, 46vw" width="1350" height="1800" alt="Client with defined, laminated brows and a cream blanket, brow lamination by Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination</figcaption></figure>
-      <figure><img src="img/brow-detail-720.webp" srcset="img/brow-detail-720.webp 720w, img/brow-detail.webp 1350w" sizes="(min-width: 900px) 360px, 46vw" width="1350" height="1800" alt="Close-up of laminated, brushed-up brows on freckled skin, by Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination</figcaption></figure>
+      <figure><img src="img/client-brows-01-720.webp" srcset="img/client-brows-01-720.webp 720w, img/client-brows-01.webp 1440w" sizes="(min-width: 900px) 360px, 92vw" width="1440" height="1920" alt="Client lying back with brushed-up, laminated brows after a brow lamination with Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination</figcaption></figure>
+      <figure><img src="img/client-brows-03-720.webp" srcset="img/client-brows-03-720.webp 720w, img/client-brows-03.webp 1440w" sizes="(min-width: 900px) 360px, 46vw" width="1440" height="1920" alt="Client with defined, laminated brows and a cream blanket, brow lamination by Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination</figcaption></figure>
+      <figure><img src="img/brow-detail-720.webp" srcset="img/brow-detail-720.webp 720w, img/brow-detail.webp 1440w" sizes="(min-width: 900px) 360px, 46vw" width="1440" height="1920" alt="Close-up of laminated, brushed-up brows on freckled skin, by Jaz" loading="lazy" decoding="async"><figcaption>Brow lamination</figcaption></figure>
     </div>
   </div>
 </section>
